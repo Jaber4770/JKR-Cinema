@@ -9,7 +9,7 @@ const partners = [pic1, pic2, pic3, pic4, pic5, pic6];
 
 export default function Partner() {
   return <>
-    <section className="bg-white py-16 text-gray-900 border-t-2 border-b-2 border-gray-300 mb-5">
+    <section className="bg-white py-16 text-gray-900 border-t-2 border-gray-300 mb-5">
       <div className="max-w-6xl mx-auto px-8">
 
         <h2 className="text-center text-4xl font-bold mb-16">

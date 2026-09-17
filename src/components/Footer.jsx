@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 export default function Footer() {
     return <>
-        <div className="h-16 bg-blue-900 text-white flex justify-center">
+        <div className=" bg-black p-5 text-white flex justify-center">
             <div>
                 <ul className="flex justify-center items-center font-bold gap-6 px-5 ">
                     <NavLink to="/"><li>JKR-CinemaDB</li></NavLink>

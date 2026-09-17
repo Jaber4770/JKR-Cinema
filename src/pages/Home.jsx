@@ -1,5 +1,6 @@
 // import React from 'react'
 
+import FAQ from "../components/FAQ";
 import Hero from "../components/Hero";
 import Partner from "../components/Partner";
 import StreamingSection from "../components/StreamingSection";
@@ -13,5 +14,6 @@ export default function Home() {
         <StreamingSection></StreamingSection>
         <WatchFreeSection></WatchFreeSection>
         <Partner></Partner>
+        <FAQ></FAQ>
     </>
 }
