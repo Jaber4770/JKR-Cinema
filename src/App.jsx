@@ -1,17 +1,31 @@
+import { createBrowserRouter, RouterProvider } from 'react-router';
 import './App.css'
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import MainLayout from './layout/MainLayout';
+import MovieSearch from './pages/MovieSearch';
+import About from './pages/About';
 
-function App() {
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: MainLayout,
+    children: [
+      { index: true, element: <Home></Home> },
+      { path: "/movieSearch", element: <MovieSearch></MovieSearch> },
+      {path: "/about", element: <About></About>},
+
+    ]
+  }
+]);
+
+function Router() {
 
   return (
     <>
-      <Navbar></Navbar>
-      <Home></Home>
-      <Footer></Footer>
+      <RouterProvider router={router}></RouterProvider>
     </>
   )
-}
+};
 
-export default App
+export default Router
