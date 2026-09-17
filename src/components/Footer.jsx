@@ -1,4 +1,3 @@
-import { Copyright } from "lucide-react";
 import { NavLink } from "react-router";
 
 export default function Footer() {

@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 export default function Navbar() {
     return <>
-        <div className="flex justify-between gap-5 bg-blue-900 font-bold text-white text-2xl py-5">
+        <div className="flex justify-between gap-5 bg-black font-bold text-white text-2xl py-5">
             <div>
                 <NavLink className="hover:text-red-500 px-4 transition-all" to="/">JKR-Cinema</NavLink>
             </div>
