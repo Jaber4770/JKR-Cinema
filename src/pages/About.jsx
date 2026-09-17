@@ -6,7 +6,7 @@ export default function About() {
       <section className="bg-gradient-to-r from-fuchsia-600 to-violet-600 text-white">
         <div className="max-w-6xl mx-auto px-8 py-24">
           <div className="max-w-3xl">
-            <p className="text-yellow-400 font-semibold uppercase tracking-wider mb-4">
+            <p className="text-blue-400 font-semibold uppercase tracking-wider mb-4">
               About Our Platform
             </p>
 
@@ -182,7 +182,7 @@ export default function About() {
             movie night favorite.
           </p>
 
-          <button className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold px-9 py-4 rounded-full transition cursor-pointer">
+          <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold px-9 py-4 rounded-full transition cursor-pointer">
             Explore Movies
           </button>
 
