@@ -11,41 +11,52 @@ export default function Search() {
   };
 
   useEffect(() => {
-    const getResult = async () => {
+    const getMovies = async () => {
+      // Input empty 
+      if (searchText.trim() === "") {
+        const response = await fetch("https://api.tvmaze.com/shows");
+        const data = await response.json();
+        const formattedData = data.map((movie) => ({
+          show: movie,
+        }));
+        setMovieResult(formattedData);
+        return;
+      }
+
       const result = await getSearchedMovie(searchText);
+
       setMovieResult(result);
     };
 
-    getResult();
+    getMovies();
   }, [searchText]);
 
   return (
-    <main className="bg-gray-50 min-h-screen">
+    <main className="min-h-screen bg-gray-50">
 
       {/* Search */}
       <div className="border-b-2 bg-white">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-center items-center gap-3">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-3 px-6 py-5 sm:flex-row">
+
           <span className="text-2xl font-bold">
             Search Movie:
           </span>
 
           <input
             type="text"
+            value={searchText}
             onChange={handleSearch}
-            className="w-full sm:w-96 text-xl p-3 border-2 border-gray-400 rounded-full outline-none focus:border-violet-600"
+            className="w-full rounded-full border-2 border-gray-400 p-3 text-xl outline-none focus:border-violet-600 sm:w-96"
             placeholder="Movie Title: Titanic"
           />
+
         </div>
       </div>
 
-      {/* Search Result */}
-      <section className="max-w-7xl mx-auto px-6 py-10">
+      {/* Movies */}
+      <section className="mx-auto max-w-7xl px-6 py-10">
 
-        <h1 className="text-3xl font-bold text-center mb-10">
-          Your Search Result
-        </h1>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10 justify-items-center">
+        <div className="grid grid-cols-1 justify-items-center gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
           {movieResult.map((movie) => (
             <MovieCard
