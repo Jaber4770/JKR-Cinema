@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { getSearchedMovie } from "../utils/getSearchedMovie";
 import MovieCard from "./MovieCart";
+import MovieDetailsModal from "./MovieDetailsModal";
 
 export default function Search() {
   const [searchText, setSearchText] = useState("");
   const [movieResult, setMovieResult] = useState([]);
+
+  // Selected movie for modal
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   const handleSearch = (e) => {
     setSearchText(e.target.value);
@@ -12,14 +16,19 @@ export default function Search() {
 
   useEffect(() => {
     const getMovies = async () => {
-      // Input empty 
       if (searchText.trim() === "") {
-        const response = await fetch("https://api.tvmaze.com/shows");
+        const response = await fetch(
+          "https://api.tvmaze.com/shows"
+        );
+
         const data = await response.json();
+
         const formattedData = data.map((movie) => ({
           show: movie,
         }));
+
         setMovieResult(formattedData);
+
         return;
       }
 
@@ -62,12 +71,20 @@ export default function Search() {
             <MovieCard
               key={movie.show.id}
               movie={movie}
+              onSeeDetails={setSelectedMovie}
             />
           ))}
 
         </div>
 
       </section>
+
+      {/* Modal */}
+      <MovieDetailsModal
+        movie={selectedMovie}
+        onClose={() => setSelectedMovie(null)}
+      />
+
     </main>
   );
 }
