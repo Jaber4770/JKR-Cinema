@@ -10,13 +10,13 @@ const partners = [pic1, pic2, pic3, pic4, pic5, pic6];
 export default function Partner() {
   return <>
     <section className="bg-white py-16 text-gray-900 border-t-2 border-gray-300 mb-5">
-      <div className="max-w-6xl mx-auto px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8">
 
-        <h2 className="text-center text-4xl font-bold mb-16">
+        <h2 className="text-center text-3xl sm:text-4xl font-bold mb-10 sm:mb-16">
           Proud Partners with:
         </h2>
 
-        <div className="flex justify-center items-center gap-8">
+        <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-6 lg:gap-8">
           {partners.map((partner, index) => (
             <div
               key={index}
