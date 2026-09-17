@@ -3,11 +3,13 @@
 import Hero from "../components/Hero";
 import StreamingSection from "../components/StreamingSection";
 import UnderHero from "../components/UnderHero";
+import WatchFreeSection from "../components/WatchFreeSection";
 
 export default function Home() {
     return <>
         <Hero></Hero>
         <UnderHero></UnderHero>
         <StreamingSection></StreamingSection>
+        <WatchFreeSection></WatchFreeSection>
     </>
 }
