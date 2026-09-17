@@ -25,7 +25,7 @@ export default function WatchFreeSection() {
                         left off with ease.
                     </p>
 
-                    <button className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold px-9 py-4 rounded-full transition cursor-pointer">
+                    <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold px-9 py-4 rounded-full transition cursor-pointer">
                         Watch Free
                     </button>
                 </div>

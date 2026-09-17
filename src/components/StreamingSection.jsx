@@ -17,7 +17,7 @@ export default function StreamingSection() {
                         Plex. Connect with friends to see who’s watching what, where.
                     </p>
 
-                    <button className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold px-9 py-4 rounded-full transition cursor-pointer">
+                    <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold px-9 py-4 rounded-full transition cursor-pointer">
                         Discover More Now
                     </button>
                 </div>
